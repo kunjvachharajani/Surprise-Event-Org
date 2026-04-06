@@ -479,7 +479,6 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
       gap: 14px;
     }
 
@@ -491,14 +490,10 @@
       border: 1px solid var(--border);
     }
 
-    .gallery-item:nth-child(1) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-
-    .gallery-item:nth-child(4) {
-      grid-column: span 2;
-    }
+    .gallery-item:nth-child(1) { grid-column: span 2; }
+    .gallery-item:nth-child(4) { grid-column: span 2; }
+    .gallery-item:nth-child(6) { grid-column: span 2; }
+    .gallery-item:nth-child(9) { grid-column: span 2; }
 
     .gallery-item img {
       width: 100%;
@@ -1196,6 +1191,26 @@
       <div class="gallery-item">
         <img src="{{ url_for('static', filename='images/krishna-traditional.jpg') }}" alt="Krishna Traditional Ceremony Decor">
         <div class="gallery-overlay"><span class="gallery-tag-label">🪔 Traditional</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/floral-arch.jpg') }}" alt="Floral Arch with Fairy Lights">
+        <div class="gallery-overlay"><span class="gallery-tag-label">🌸 Floral Arch</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/golden-arch.jpg') }}" alt="Golden Double Arch Decoration">
+        <div class="gallery-overlay"><span class="gallery-tag-label">✨ Golden Arch</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/radha-baby.jpg') }}" alt="Radha Krishna Baby Shower Theme">
+        <div class="gallery-overlay"><span class="gallery-tag-label">🪷 Baby Shower</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/seemanthan.jpg') }}" alt="Seemanthan Baby Shower Decor">
+        <div class="gallery-overlay"><span class="gallery-tag-label">👶 Seemanthan</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/shrimant.jpg') }}" alt="Shrimant Sanskar Decoration">
+        <div class="gallery-overlay"><span class="gallery-tag-label">🙏 Shrimant</span></div>
       </div>
     </div>
   </section>
