@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Surprise – Event & Balloon Decoration Ahmedabad</title>
+  <title>The Surprise events – Event & Balloon Decoration Surendranagar</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
     rel="stylesheet">
@@ -490,10 +490,33 @@
       border: 1px solid var(--border);
     }
 
-    .gallery-item:nth-child(1) { grid-column: span 2; }
-    .gallery-item:nth-child(4) { grid-column: span 2; }
-    .gallery-item:nth-child(6) { grid-column: span 2; }
-    .gallery-item:nth-child(9) { grid-column: span 2; }
+    .gallery-item:nth-child(1) {
+      grid-column: span 2;
+    }
+
+    .gallery-item:nth-child(4) {
+      grid-column: span 2;
+    }
+
+    .gallery-item:nth-child(7) {
+      grid-column: span 2;
+    }
+
+    .gallery-item:nth-child(10) {
+      grid-column: span 2;
+    }
+
+    .gallery-item:nth-child(13) {
+      grid-column: span 2;
+    }
+
+    .gallery-item:nth-child(16) {
+      grid-column: span 2;
+    }
+
+    .gallery-item:nth-child(19) {
+      grid-column: span 2;
+    }
 
     .gallery-item img {
       width: 100%;
@@ -1056,6 +1079,76 @@
         gap: 24px;
       }
     }
+
+    /* ── SERVICE CARD CLICKABLE ── */
+    .service-card {
+      cursor: pointer !important;
+    }
+
+    .service-view-btn {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--blue-glow);
+      letter-spacing: 0.5px;
+      transition: gap 0.2s;
+    }
+
+    .service-card.active-filter {
+      border-color: var(--blue-light) !important;
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+    }
+
+    .service-card.active-filter::before {
+      opacity: 1 !important;
+    }
+
+    /* ── GALLERY SHOW MORE ── */
+    .gallery-item.gallery-hidden {
+      display: none;
+    }
+
+    /* ── REVIEW FORM ── */
+    .review-form-wrap {
+      max-width: 600px;
+      margin: 40px auto 0;
+    }
+
+    .review-form-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px;
+    }
+
+    .star-picker {
+      display: flex;
+      gap: 6px;
+    }
+
+    .star-picker .star {
+      font-size: 2rem;
+      color: rgba(248, 250, 255, 0.2);
+      cursor: pointer;
+      transition: color 0.15s, transform 0.15s;
+      user-select: none;
+    }
+
+    .star-picker .star.active {
+      color: var(--gold);
+    }
+
+    .star-picker .star:hover {
+      transform: scale(1.2);
+    }
+
+    /* live review card date */
+    .testi-date {
+      color: rgba(248, 250, 255, 0.35);
+      font-size: 0.72rem;
+      margin-top: 2px;
+    }
   </style>
 </head>
 
@@ -1069,12 +1162,13 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">The <span>Surprise</span></div>
+    <div class="nav-logo">The <span>Surprise Events</span></div>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#write-review">Write Review</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="tel:8238894242" class="nav-cta">📞 Book Now</a>
@@ -1083,13 +1177,13 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-inner">
-      <div class="hero-badge">✨ Ahmedabad's #1 Event Decorators</div>
+      <div class="hero-badge">✨ Surendranagar's #1 Event Decorators</div>
       <h1 class="hero-title">
         Make Every Moment<br>a <em>Magical Surprise</em>
       </h1>
       <p class="hero-sub">
         Premium balloon & event decoration for birthdays, baby showers, Godh Bharai, wedding ceremonies & all your
-        special celebrations in Ahmedabad.
+        special celebrations in Surendranagar.
       </p>
       <div class="hero-btns">
         <a href="tel:8238894242" class="btn-primary">📞 Call for Inquiry</a>
@@ -1105,7 +1199,7 @@
           <div class="stat-label">Avg Rating</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">6+</div>
+          <div class="stat-num">4+</div>
           <div class="stat-label">Years Experience</div>
         </div>
       </div>
@@ -1120,40 +1214,47 @@
     <h2 class="section-title">Our <em>Decoration</em> Services</h2>
     <p class="section-sub">From intimate room setups to grand event stages — we bring your vision to life.</p>
 
+    <p class="section-sub" style="margin-bottom:8px;">Click any service to see photos from that category.</p>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card" onclick="filterGallery('birthday')" data-filter="birthday">
         <div class="service-icon">🎂</div>
         <div class="service-name">Birthday Decoration</div>
         <p class="service-desc">Themed balloon setups, backdrops, number foils, and customized decorations for every age
           group.</p>
+        <span class="service-view-btn">View Photos →</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="filterGallery('baby')" data-filter="baby">
         <div class="service-icon">👶</div>
         <div class="service-name">Baby Shower / Godh Bharai</div>
         <p class="service-desc">Elegant and divine decor setups with floral arches, balloon garlands, and themed
           backdrops.</p>
+        <span class="service-view-btn">View Photos →</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="filterGallery('wedding')" data-filter="wedding">
         <div class="service-icon">🌸</div>
         <div class="service-name">Wedding Ceremony Decor</div>
         <p class="service-desc">Beautiful flower arch setups, fairy light backdrops, and luxurious stage decoration.</p>
+        <span class="service-view-btn">View Photos →</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="filterGallery('balloon')" data-filter="balloon">
         <div class="service-icon">🎉</div>
         <div class="service-name">Balloon Garland & Arch</div>
         <p class="service-desc">Organic balloon arches, columns, garlands in any color palette to match your event
           theme.</p>
+        <span class="service-view-btn">View Photos →</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="filterGallery('traditional')" data-filter="traditional">
         <div class="service-icon">🪔</div>
         <div class="service-name">Traditional / Pooja Decor</div>
         <p class="service-desc">Shrimant, Namkaran, Cradle Ceremony — beautifully crafted traditional setups.</p>
+        <span class="service-view-btn">View Photos →</span>
       </div>
-      <div class="service-card">
+      <div class="service-card" onclick="filterGallery('all')" data-filter="all">
         <div class="service-icon">🎊</div>
         <div class="service-name">Custom Event Themes</div>
         <p class="service-desc">Superhero, Floral, Princess, Bollywood — any custom theme designed especially for you.
         </p>
+        <span class="service-view-btn">View All Photos →</span>
       </div>
     </div>
   </section>
@@ -1166,52 +1267,23 @@
       <div>
         <div class="section-tag">Our Work</div>
         <h2 class="section-title">Real Events, <em>Real Magic</em></h2>
+        <p id="gallery-filter-label" style="color:var(--blue-glow);font-size:0.85rem;margin-top:6px;"></p>
       </div>
-      <a href="https://www.instagram.com/the_surprise_98" target="_blank" class="btn-secondary"
-        style="font-size:0.85rem;padding:10px 22px;">📸 View More on Instagram</a>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+        <button onclick="filterGallery('all')" id="clearFilterBtn" class="btn-secondary"
+          style="font-size:0.82rem;padding:8px 18px;border:none;cursor:pointer;display:none;">✕ Show All</button>
+        <a href="https://www.instagram.com/the_surprise_98" target="_blank" class="btn-secondary"
+          style="font-size:0.85rem;padding:10px 22px;">📸 Instagram</a>
+      </div>
     </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="{{ url_for('static', filename='images/baby-bloom.jpg') }}" alt="Baby in Bloom Baby Shower Decor">
-        <div class="gallery-overlay"><span class="gallery-tag-label">🌸 Baby Shower</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="{{ url_for('static', filename='images/godh-bharai-maa.jpg') }}" alt="Maa Godh Bharai Traditional Decor">
-        <div class="gallery-overlay"><span class="gallery-tag-label">🙏 Godh Bharai</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="{{ url_for('static', filename='images/krishna-baby.jpg') }}" alt="Krishna Theme Baby Shower">
-        <div class="gallery-overlay"><span class="gallery-tag-label">🪷 Krishna Theme</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="{{ url_for('static', filename='images/aarav-birthday.jpg') }}" alt="Aarav Spiderman Birthday Decoration">
-        <div class="gallery-overlay"><span class="gallery-tag-label">🎂 Birthday</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="{{ url_for('static', filename='images/krishna-traditional.jpg') }}" alt="Krishna Traditional Ceremony Decor">
-        <div class="gallery-overlay"><span class="gallery-tag-label">🪔 Traditional</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="{{ url_for('static', filename='images/floral-arch.jpg') }}" alt="Floral Arch with Fairy Lights">
-        <div class="gallery-overlay"><span class="gallery-tag-label">🌸 Floral Arch</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="{{ url_for('static', filename='images/golden-arch.jpg') }}" alt="Golden Double Arch Decoration">
-        <div class="gallery-overlay"><span class="gallery-tag-label">✨ Golden Arch</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="{{ url_for('static', filename='images/radha-baby.jpg') }}" alt="Radha Krishna Baby Shower Theme">
-        <div class="gallery-overlay"><span class="gallery-tag-label">🪷 Baby Shower</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="{{ url_for('static', filename='images/seemanthan.jpg') }}" alt="Seemanthan Baby Shower Decor">
-        <div class="gallery-overlay"><span class="gallery-tag-label">👶 Seemanthan</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="{{ url_for('static', filename='images/shrimant.jpg') }}" alt="Shrimant Sanskar Decoration">
-        <div class="gallery-overlay"><span class="gallery-tag-label">🙏 Shrimant</span></div>
-      </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <p style="color:white;text-align:center;">Loading images...</p>
+    </div>
+    <div id="galleryShowMore" style="text-align:center;margin-top:30px;display:none;">
+      <button onclick="showAllGallery()" class="btn-primary" style="cursor:pointer;border:none;">
+        🖼️ Show All Photos (<span id="hiddenCount">0</span> more)
+      </button>
     </div>
   </section>
 
@@ -1327,90 +1399,67 @@
   <section id="testimonials">
     <div class="section-tag">Reviews</div>
     <h2 class="section-title">What Our <em>Clients</em> Say</h2>
-    <p class="section-sub">Hundreds of happy families across Ahmedabad trust us for their special moments.</p>
+    <p class="section-sub">Real reviews from real families who trusted us for their special moments.</p>
 
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"The Surprise team decorated my daughter's first birthday in a Spiderman theme — it was
-          absolutely stunning! Every detail was perfect and the balloons were gorgeous. Highly recommended!"</p>
-        <div class="testi-author">
-          <div class="testi-avatar">P</div>
-          <div>
-            <div class="testi-name">Priya Shah</div>
-            <div class="testi-event">Birthday Decoration</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"We hired them for our Godh Bharai ceremony and the setup was divine! The floral
-          decorations and balloon arches were beyond our expectations. So many guests complimented the decor!"</p>
-        <div class="testi-author">
-          <div class="testi-avatar">R</div>
-          <div>
-            <div class="testi-name">Ritu Patel</div>
-            <div class="testi-event">Godh Bharai Decor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Professional team, on time, very creative! The baby shower setup was exactly like what we
-          had seen on their Instagram. They really go the extra mile to make things beautiful."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">D</div>
-          <div>
-            <div class="testi-name">Divya Mehta</div>
-            <div class="testi-event">Baby Shower</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Booked for my son's Seemantham ceremony. The traditional decor with Krishna theme was
-          absolutely beautiful. Very affordable for the quality they deliver. Will book again!"</p>
-        <div class="testi-author">
-          <div class="testi-avatar">J</div>
-          <div>
-            <div class="testi-name">Jinal Somani</div>
-            <div class="testi-event">Seemantham Decor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Amazing work! The floral moon arch setup for our anniversary was exactly like a
-          fairytale. The team was very cooperative and helped us choose the right package within budget."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">M</div>
-          <div>
-            <div class="testi-name">Monika Joshi</div>
-            <div class="testi-event">Anniversary Decoration</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Very impressed by the professionalism. They arrived early, set everything up neatly, and
-          the decoration was exactly as discussed. The Shrimant Sanskar decor was truly grand!"</p>
-        <div class="testi-author">
-          <div class="testi-avatar">K</div>
-          <div>
-            <div class="testi-name">Kiran Desai</div>
-            <div class="testi-event">Shrimant Sanskar</div>
-          </div>
-        </div>
+    <!-- Live customer reviews from Supabase -->
+    <div id="liveReviewsWrap" style="margin-top:16px;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:20px;color:var(--blue-glow);">💬
+        Customer Reviews</h3>
+      <div class="testi-grid" id="liveReviewsGrid">
+        <p style="color:var(--white-dim);font-size:0.9rem;">Loading reviews…</p>
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
+
+  <!-- WRITE REVIEW -->
+  <section id="write-review" style="background:var(--bg2);">
+    <div class="section-tag">Share Your Experience</div>
+    <h2 class="section-title">Leave a <em>Review</em></h2>
+    <p class="section-sub">Had a decoration done by us? We'd love to hear from you!</p>
+
+    <div class="review-form-wrap">
+      <div class="review-form-card">
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" id="rv-name" placeholder="e.g. Priya Shah">
+        </div>
+        <div class="form-group">
+          <label>Event Type</label>
+          <select id="rv-event">
+            <option value="">Select event type (optional)</option>
+            <option>Birthday Decoration</option>
+            <option>Baby Shower / Godh Bharai</option>
+            <option>Shrimant / Seemantham</option>
+            <option>Wedding / Engagement</option>
+            <option>Kids Theme Party</option>
+            <option>Floral Arch Setup</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Rating *</label>
+          <div class="star-picker" id="starPicker">
+            <span class="star" data-v="1" onclick="setRating(1)">★</span>
+            <span class="star" data-v="2" onclick="setRating(2)">★</span>
+            <span class="star" data-v="3" onclick="setRating(3)">★</span>
+            <span class="star" data-v="4" onclick="setRating(4)">★</span>
+            <span class="star" data-v="5" onclick="setRating(5)">★</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Your Review *</label>
+          <textarea id="rv-text" placeholder="Tell others about your experience with The Surprise Events…"
+            style="min-height:120px;"></textarea>
+        </div>
+        <button class="form-submit" id="rvSubmitBtn" onclick="submitReview()">⭐ Submit Review</button>
+        <p id="rv-msg" style="margin-top:12px;text-align:center;font-size:0.9rem;"></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" id="contact-divider"></div>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -1420,7 +1469,8 @@
     <div class="contact-wrap">
       <div class="contact-info">
         <h3>Better Call…<br>Surprise Events! 🎊</h3>
-        <p>We're based in Ahmedabad and serve across the city and surrounding areas. Reach out to discuss your event —
+        <p>We're based in Surendranagar and serve across the city and surrounding areas. Reach out to discuss your event
+          —
           we'd love to help make it unforgettable!</p>
 
         <div class="contact-actions">
@@ -1505,8 +1555,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">The <span>Surprise</span></div>
-    <div class="footer-tagline">Better Call… Surprise Events! · Ahmedabad</div>
+    <div class="footer-logo">The <span>Surprise Events</span></div>
+    <div class="footer-tagline">Better Call… Surprise Events! · Surendranagar </div>
     <div class="footer-links">
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
@@ -1515,7 +1565,7 @@
       <a href="tel:8238894242">📞 8238894242</a>
       <a href="https://www.instagram.com/the_surprise_98" target="_blank">📸 Instagram</a>
     </div>
-    <div class="footer-copy">© 2025 The Surprise Events · Ahmedabad, Gujarat · All Rights Reserved</div>
+    <div class="footer-copy">© 2025 The Surprise Events · Surendranagar, Gujarat · All Rights Reserved</div>
   </footer>
 
   <!-- FLOATING CTA BUTTONS -->
@@ -1534,12 +1584,12 @@
   <script>
     async function handleSubmit() {
       const btn = document.getElementById('submitBtn');
-      const name  = document.querySelector('input[placeholder="Full name"]').value.trim();
+      const name = document.querySelector('input[placeholder="Full name"]').value.trim();
       const phone = document.querySelector('input[type="tel"]').value.trim();
       const selects = document.querySelectorAll('select');
-      const event  = selects[0].value;
+      const event = selects[0].value;
       const budget = selects[1].value;
-      const date   = document.querySelector('input[type="date"]').value;
+      const date = document.querySelector('input[type="date"]').value;
       const message = document.querySelector('textarea').value.trim();
 
       if (!name || !phone) {
@@ -1568,6 +1618,313 @@
       }
     }
   </script>
+
+  <!-- ── GALLERY FILTER + SHOW-MORE LOGIC ── -->
+  <script>
+    const GALLERY_INITIAL = 5;
+    let allGalleryFiles = [];      // used when filter = 'all' (from storage bucket)
+    let currentFilter = 'all';
+    let galleryExpanded = false;
+
+    function filterGallery(category) {
+      currentFilter = category;
+      galleryExpanded = false;
+
+      // Scroll to gallery
+      document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Highlight active service card
+      document.querySelectorAll('.service-card').forEach(c => {
+        c.classList.toggle('active-filter', c.dataset.filter === category);
+      });
+
+      // Update filter label & clear button
+      const label = document.getElementById('gallery-filter-label');
+      const clearBtn = document.getElementById('clearFilterBtn');
+      if (category === 'all') {
+        label.textContent = '';
+        clearBtn.style.display = 'none';
+        renderGalleryFromBucket();
+      } else {
+        const names = {
+          birthday: 'Birthday Decoration', baby: 'Baby Shower / Godh Bharai',
+          wedding: 'Wedding / Floral', balloon: 'Balloon & Arch', traditional: 'Traditional / Pooja'
+        };
+        label.textContent = '📂 Showing: ' + (names[category] || category);
+        clearBtn.style.display = 'inline-flex';
+        loadEventPhotos(category);
+      }
+    }
+
+    // Load photos for a specific event type from event_photos table
+    async function loadEventPhotos(eventType) {
+      const grid = document.getElementById('galleryGrid');
+      const showMoreDiv = document.getElementById('galleryShowMore');
+      const hiddenCountSpan = document.getElementById('hiddenCount');
+
+      grid.innerHTML = '<p style="color:white;text-align:center;grid-column:1/-1;">Loading photos…</p>';
+      showMoreDiv.style.display = 'none';
+
+      try {
+        const res = await fetch(
+          `${SUPABASE_URL}/rest/v1/event_photos?event_type=eq.${encodeURIComponent(eventType)}&order=created_at.desc&limit=100`,
+          {
+            headers: {
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+              'apikey': SUPABASE_ANON_KEY
+            }
+          }
+        );
+        const photos = await res.json();
+
+        if (!Array.isArray(photos) || photos.length === 0) {
+          grid.innerHTML = '<p style="color:var(--white-dim);text-align:center;grid-column:1/-1;">No photos found for this category yet. Check back soon!</p>';
+          return;
+        }
+
+        grid.innerHTML = '';
+        const limit = galleryExpanded ? photos.length : Math.min(GALLERY_INITIAL, photos.length);
+
+        photos.forEach((photo, idx) => {
+          const item = document.createElement('div');
+          item.className = 'gallery-item';
+          if (idx >= limit) item.classList.add('gallery-hidden');
+          item.innerHTML = `
+            <img src="${photo.image_url}" alt="${photo.caption || 'Event Decoration'}" loading="lazy" onerror="this.parentElement.style.display='none'">
+            <div class="gallery-overlay"><span class="gallery-tag-label">${photo.caption || '✨ Our Work'}</span></div>
+          `;
+          grid.appendChild(item);
+        });
+
+        const hidden = photos.length - limit;
+        if (hidden > 0 && !galleryExpanded) {
+          hiddenCountSpan.textContent = hidden;
+          showMoreDiv.style.display = 'block';
+        }
+      } catch (e) {
+        grid.innerHTML = '<p style="color:var(--white-dim);text-align:center;grid-column:1/-1;">Could not load photos.</p>';
+        console.error('Event photos error:', e);
+      }
+    }
+
+    // Render all photos from storage bucket (used for 'all' filter)
+    function renderGalleryFromBucket() {
+      const grid = document.getElementById('galleryGrid');
+      const showMoreDiv = document.getElementById('galleryShowMore');
+      const hiddenCountSpan = document.getElementById('hiddenCount');
+
+      if (allGalleryFiles.length === 0) {
+        grid.innerHTML = '<p style="color:var(--white-dim);text-align:center;grid-column:1/-1;">No images found.</p>';
+        showMoreDiv.style.display = 'none';
+        return;
+      }
+
+      grid.innerHTML = '';
+      const limit = galleryExpanded ? allGalleryFiles.length : Math.min(GALLERY_INITIAL, allGalleryFiles.length);
+
+      allGalleryFiles.forEach((file, idx) => {
+        const imageUrl = `${SUPABASE_URL}/storage/v1/object/public/${BUCKET_NAME}/${file.name}`;
+        const label = getLabel(file.name);
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        if (idx >= limit) item.classList.add('gallery-hidden');
+        item.innerHTML = `
+          <img src="${imageUrl}" alt="Event Decoration" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="gallery-overlay"><span class="gallery-tag-label">${label}</span></div>
+        `;
+        grid.appendChild(item);
+      });
+
+      const hidden = allGalleryFiles.length - limit;
+      if (hidden > 0 && !galleryExpanded) {
+        hiddenCountSpan.textContent = hidden;
+        showMoreDiv.style.display = 'block';
+      } else {
+        showMoreDiv.style.display = 'none';
+      }
+    }
+
+    function showAllGallery() {
+      galleryExpanded = true;
+      if (currentFilter === 'all') {
+        renderGalleryFromBucket();
+      } else {
+        loadEventPhotos(currentFilter);
+      }
+    }
+  </script>
+
+  <!-- ── SUPABASE CORE + GALLERY LOADER + REVIEWS ── -->
+  <script>
+    const SUPABASE_URL = 'https://vhykbpifcwzxqgmlchrh.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoeWticGlmY3d6eHFnbWxjaHJoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0NTM4MjIsImV4cCI6MjA5MTAyOTgyMn0.WDwaOhkfv8scRAUnUL9SGZ0ZnG1mFxtabs5RTqhJXZ8';
+    const BUCKET_NAME = 'images';
+
+    const labelMap = {
+      'birthday': '🎂 Birthday',
+      'baby': '👶 Baby Shower',
+      'godh': '🙏 Godh Bharai',
+      'krishna': '🪷 Krishna Theme',
+      'floral': '🌸 Floral Arch',
+      'golden': '✨ Golden Arch',
+      'wedding': '💍 Wedding',
+      'shrimant': '🙏 Shrimant',
+      'seemanthan': '👶 Seemanthan',
+      'traditional': '🪔 Traditional',
+    };
+
+    function getLabel(filename) {
+      const lower = filename.toLowerCase();
+      for (const key in labelMap) {
+        if (lower.includes(key)) return labelMap[key];
+      }
+      return '✨ Our Work';
+    }
+
+    // ── GALLERY LOADER ──
+    async function loadGalleryImages() {
+      const grid = document.getElementById('galleryGrid');
+      try {
+        const response = await fetch(
+          `${SUPABASE_URL}/storage/v1/object/list/${BUCKET_NAME}`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+              'apikey': SUPABASE_ANON_KEY
+            },
+            body: JSON.stringify({ prefix: '', limit: 100, offset: 0, sortBy: { column: 'name', order: 'asc' } })
+          }
+        );
+        const files = await response.json();
+        console.log('Supabase gallery:', response.status, files);
+        if (!response.ok) {
+          grid.innerHTML = `<p style="color:#f87171;text-align:center;grid-column:1/-1;">Error loading images: ${files.message || response.status}</p>`;
+          return;
+        }
+        if (!Array.isArray(files) || files.length === 0) {
+          grid.innerHTML = '<p style="color:white;text-align:center;grid-column:1/-1;">No images found. Please upload images to Supabase.</p>';
+          return;
+        }
+        allGalleryFiles = files.filter(f => f.name);
+        renderGallery();
+      } catch (error) {
+        grid.innerHTML = '<p style="color:white;text-align:center;grid-column:1/-1;">Could not load images.</p>';
+        console.error('Gallery error:', error);
+      }
+    }
+
+    // ── REVIEWS STAR PICKER ──
+    let selectedRating = 0;
+    function setRating(val) {
+      selectedRating = val;
+      document.querySelectorAll('#starPicker .star').forEach(s => {
+        s.classList.toggle('active', parseInt(s.dataset.v) <= val);
+      });
+    }
+
+    // ── SUBMIT REVIEW ──
+    async function submitReview() {
+      const btn = document.getElementById('rvSubmitBtn');
+      const msg = document.getElementById('rv-msg');
+      const name = document.getElementById('rv-name').value.trim();
+      const eventType = document.getElementById('rv-event').value;
+      const text = document.getElementById('rv-text').value.trim();
+
+      if (!name) { msg.textContent = '⚠️ Please enter your name.'; msg.style.color = '#f87171'; return; }
+      if (!selectedRating) { msg.textContent = '⚠️ Please select a star rating.'; msg.style.color = '#f87171'; return; }
+      if (!text) { msg.textContent = '⚠️ Please write a review.'; msg.style.color = '#f87171'; return; }
+
+      btn.textContent = '⏳ Submitting…';
+      btn.disabled = true;
+      msg.textContent = '';
+
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/reviews`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'apikey': SUPABASE_ANON_KEY,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ name, event_type: eventType, rating: selectedRating, review_text: text })
+        });
+        if (res.status === 201 || res.ok) {
+          msg.textContent = '🎉 Thank you! Your review has been posted.';
+          msg.style.color = '#34d399';
+          document.getElementById('rv-name').value = '';
+          document.getElementById('rv-event').value = '';
+          document.getElementById('rv-text').value = '';
+          selectedRating = 0;
+          document.querySelectorAll('#starPicker .star').forEach(s => s.classList.remove('active'));
+          loadLiveReviews();
+        } else {
+          const errData = await res.json().catch(() => ({}));
+          msg.textContent = '❌ Error: ' + (errData.message || res.status);
+          msg.style.color = '#f87171';
+        }
+      } catch (e) {
+        msg.textContent = '❌ Could not submit. Please try again.';
+        msg.style.color = '#f87171';
+        console.error(e);
+      } finally {
+        btn.textContent = '⭐ Submit Review';
+        btn.disabled = false;
+      }
+    }
+
+    // ── LOAD LIVE REVIEWS ──
+    async function loadLiveReviews() {
+      const grid = document.getElementById('liveReviewsGrid');
+      try {
+        const res = await fetch(
+          `${SUPABASE_URL}/rest/v1/reviews?order=created_at.desc&limit=20`,
+          {
+            headers: {
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+              'apikey': SUPABASE_ANON_KEY
+            }
+          }
+        );
+        const reviews = await res.json();
+        console.log('Reviews:', reviews);
+        if (!Array.isArray(reviews) || reviews.length === 0) {
+          grid.innerHTML = '<p style="color:var(--white-dim);font-size:0.88rem;">No customer reviews yet. Be the first to write one! 👆</p>';
+          return;
+        }
+        grid.innerHTML = '';
+        reviews.forEach(r => {
+          const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+          const initial = r.name.trim().charAt(0).toUpperCase();
+          const date = new Date(r.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+          const card = document.createElement('div');
+          card.className = 'testi-card';
+          card.innerHTML = `
+            <div class="testi-stars" style="color:var(--gold);">${stars}</div>
+            <p class="testi-text">"${r.review_text}"</p>
+            <div class="testi-author">
+              <div class="testi-avatar">${initial}</div>
+              <div>
+                <div class="testi-name">${r.name}</div>
+                <div class="testi-event">${r.event_type || 'Event Decoration'}</div>
+                <div class="testi-date">${date}</div>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      } catch (e) {
+        grid.innerHTML = '<p style="color:var(--white-dim);">Could not load reviews.</p>';
+        console.error(e);
+      }
+    }
+
+    loadGalleryImages();
+    loadLiveReviews();
+  </script>
+  <meta name="google-site-verification" content="VVwlDWLtDNX64u8EGsdwLilKC4aGV9r0YdmIau8N3DA" />
 </body>
 
 </html>
