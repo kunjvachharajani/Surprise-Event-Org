@@ -1690,7 +1690,7 @@
           item.className = 'gallery-item';
           if (idx >= limit) item.classList.add('gallery-hidden');
           item.innerHTML = `
-            <img src="${photo.image_url}" alt="${photo.caption || 'Event Decoration'}" loading="lazy" onerror="this.parentElement.style.display='none'">
+            <img src="${photo.image_url}" alt="${photo.caption || 'Event Decoration'}" loading="lazy">
             <div class="gallery-overlay"><span class="gallery-tag-label">${photo.caption || '✨ Our Work'}</span></div>
           `;
           grid.appendChild(item);
@@ -1729,7 +1729,7 @@
         item.className = 'gallery-item';
         if (idx >= limit) item.classList.add('gallery-hidden');
         item.innerHTML = `
-          <img src="${imageUrl}" alt="Event Decoration" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <img src="${imageUrl}" alt="Event Decoration" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-tag-label">${label}</span></div>
         `;
         grid.appendChild(item);
@@ -1808,9 +1808,9 @@
           return;
         }
         allGalleryFiles = files.filter(f => f.name);
-        renderGallery();
+        renderGalleryFromBucket();
       } catch (error) {
-        grid.innerHTML = '<p style="color:white;text-align:center;grid-column:1/-1;">Could not load images.</p>';
+        grid.innerHTML = `<p style="color:#f87171;text-align:center;grid-column:1/-1;">Could not load images. Detail: ${error.message}</p>`;
         console.error('Gallery error:', error);
       }
     }
@@ -1924,7 +1924,7 @@
     loadGalleryImages();
     loadLiveReviews();
   </script>
-  <meta name="google-site-verification" content="VVwlDWLtDNX64u8EGsdwLilKC4aGV9r0YdmIau8N3DA" />
+
 </body>
 
 </html>

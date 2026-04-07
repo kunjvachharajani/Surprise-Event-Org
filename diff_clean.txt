@@ -1,0 +1,23 @@
+diff --git a/templates/index.html b/templates/index.html
+index d096d0a..c653bc4 100644
+--- a/templates/index.html
++++ b/templates/index.html
+@@ -1808,7 +1808,7 @@
+           return;
+         }
+         allGalleryFiles = files.filter(f => f.name);
+-        renderGallery();
++        renderGalleryFromBucket();
+       } catch (error) {
+         grid.innerHTML = '<p style="color:white;text-align:center;grid-column:1/-1;">Could not load images.</p>';
+         console.error('Gallery error:', error);
+@@ -1924,7 +1924,7 @@
+     loadGalleryImages();
+     loadLiveReviews();
+   </script>
+-  <meta name="google-site-verification" content="VVwlDWLtDNX64u8EGsdwLilKC4aGV9r0YdmIau8N3DA" />
++
+ </body>
+ 
+ </html>
+\ No newline at end of file
