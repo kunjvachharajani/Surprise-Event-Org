@@ -1565,25 +1565,11 @@
           your engagement truly unforgettable.</p>
         <span class="service-view-btn">View Photos →</span>
       </div>
-      <div class="service-card" onclick="filterGallery('firstnight')" data-filter="firstnight">
-        <div class="service-icon">🌹</div>
-        <div class="service-name">First Night Decoration</div>
-        <p class="service-desc">Luxurious and romantic room decor with rose petals, candles, fairy lights, and balloon
-          arrangements for a perfect first night.</p>
-        <span class="service-view-btn">View Photos →</span>
-      </div>
-      <div class="service-card" onclick="filterGallery('haldi')" data-filter="haldi">
-        <div class="service-icon">🌼</div>
-        <div class="service-name">Haldi Decoration</div>
-        <p class="service-desc">Vibrant and traditional Haldi ceremony setups with marigold flowers, bright drapes, and
-          joyful decorations full of color.</p>
-        <span class="service-view-btn">View Photos →</span>
-      </div>
-      <div class="service-card" onclick="filterGallery('welcome')" data-filter="welcome">
-        <div class="service-icon">🎊</div>
-        <div class="service-name">Welcome Decoration</div>
-        <p class="service-desc">Grand welcome setups for newborns, brides, and special guests — balloon arches, floral
-          gates, and stunning entry decorations.</p>
+      <div class="service-card" onclick="filterGallery('wedding')" data-filter="wedding">
+        <div class="service-icon">💒</div>
+        <div class="service-name">Wedding Decoration</div>
+        <p class="service-desc">Stunning mandap setups, elegant floral arrangements, and grand entry decorations to make
+          your dream wedding a reality.</p>
         <span class="service-view-btn">View Photos →</span>
       </div>
     </div>
@@ -1987,9 +1973,7 @@
           baby: '👶 Baby Shower',
           birthday: '🎂 Birthday Party',
           engagement: '💍 Engagement Decoration',
-          firstnight: '🌹 First Night Decoration',
-          haldi: '🌼 Haldi Decoration',
-          welcome: '🎊 Welcome Decoration'
+          wedding: '💒 Wedding Decoration'
         };
         label.textContent = '📂 Showing: ' + (names[category] || category);
         clearBtn.style.display = 'inline-flex';
@@ -2002,9 +1986,7 @@
       baby: 'baby shower',
       birthday: 'birthday party',
       engagement: 'engagement decoration',
-      firstnight: 'first night decoration',
-      haldi: 'haldi decoration',
-      welcome: 'welcome decoration'
+      wedding: 'wedding'
     };
 
     // Load photos for a specific event type from Supabase Storage subfolder
@@ -2209,9 +2191,7 @@
       { key: 'baby shower', label: '👶 Baby Shower' },
       { key: 'birthday party', label: '🎂 Birthday Party' },
       { key: 'engagement decoration', label: '💍 Engagement' },
-      { key: 'first night decoration', label: '🌹 First Night' },
-      { key: 'haldi decoration', label: '🌼 Haldi' },
-      { key: 'welcome decoration', label: '🎊 Welcome' }
+      { key: 'wedding', label: '💒 Wedding' }
     ];
 
     async function fetchFolderFiles(folderKey) {
